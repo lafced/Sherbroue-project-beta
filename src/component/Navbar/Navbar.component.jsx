@@ -1,4 +1,4 @@
-
+import Icon from '../../assets/Sherbroue-Logo.png';
 import React, {useState} from 'react';
 import './Navbar.styles.css';
 import {FaBars} from 'react-icons/fa';
@@ -17,14 +17,18 @@ function Navbar () {
             <IconContext.Provider value={{color:'#fff'}}>
                 <div className="navbar">
                     <Link to='#' className='menu-bars'>
-                        <FaBars onClick={showSidebar}/>
+                        <FaBars onClick={showSidebar}/> 
+                        <Link to='/' className='container'>
+                                <img src={Icon} id='logoSherb' />
+                        </Link>
                     </Link>
                 </div>
                 <nav className={sidebar ? 'nav-menu active':'nav-menu'}>
                     <ul className='nav-menu-items' onClick={showSidebar}>
                         <li className="navbar-toggle">
                             <Link to ="#" className="menu-bars">
-                                <FaBars  />
+                                <AiOutlineClose />
+                                
                             </Link>
                         </li>
                         {SidebarData.map((item,index) => {

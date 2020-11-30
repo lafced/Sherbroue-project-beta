@@ -14,8 +14,8 @@ export const SidebarData = [
         cName:'nav-text',
     },
     {
-        title:'Project',
-        path:'/project',
+        title:'Projet',
+        path:'/projet',
         cName:'nav-text',
     },
     {
