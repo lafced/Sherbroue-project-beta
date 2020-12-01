@@ -1,4 +1,4 @@
-import Icon from '../../assets/Sherbroue-Logo.png';
+
 import React, {useState} from 'react';
 import './Navbar.styles.css';
 import {FaBars} from 'react-icons/fa';
@@ -6,7 +6,7 @@ import {AiOutlineClose} from 'react-icons/ai';
 import {  Link } from 'react-router-dom';
 import {SidebarData} from '../../data/sidebarData'
 import { IconContext } from 'react-icons';
-
+import LogoS from '../../assets/Sherbroue-Logo (2).svg'
 function Navbar () {
     const [sidebar,setSidebar] = useState(false);
 
@@ -18,9 +18,11 @@ function Navbar () {
                 <div className="navbar">
                     <Link to='#' className='menu-bars'>
                         <FaBars onClick={showSidebar}/> 
-                        <Link to='/' className='container'>
-                                <img src={Icon} id='logoSherb' />
-                        </Link>
+                        
+                    </Link>
+                    <Link to='/' className='container'>
+                            <img src={LogoS} id='logoSherb' />
+                                
                     </Link>
                 </div>
                 <nav className={sidebar ? 'nav-menu active':'nav-menu'}>

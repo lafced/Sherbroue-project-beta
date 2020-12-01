@@ -1,6 +1,6 @@
 .navbar {
     background-color:#C4C4C4;
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -73,10 +73,11 @@
   }
   #logoSherb {
     position: absolute;
-    left:0;
-    top:0;
+    left:5px;
+    top:10px;
     width:80px;
     height:80px;
     padding:0;
     border:0;
   }
+
