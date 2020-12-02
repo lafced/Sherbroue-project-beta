@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from './component/header/header.component';
+import RespNavbar from './component/responsive-Navbar/responsive-navbar.component';
 import { BrowserRouter,Switch,  Route } from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import project from './pages/project';
@@ -15,7 +15,7 @@ import contact from './pages/Homepage';
 function App() {
   return (
    <BrowserRouter>
-    <Header/>
+    <RespNavbar/>
     <Switch>
       <Route exact path='/' component={Homepage}/>
 

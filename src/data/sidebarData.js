@@ -29,7 +29,7 @@ export const SidebarData = [
         cName:'nav-text',
     },
     {
-        title:'Devenir membre/connexion',
+        title:'Devenir membre',
         path:'/connexion',
         cName:'nav-text',
     },
