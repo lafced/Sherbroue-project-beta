@@ -16,16 +16,16 @@ function App() {
   return (
    <BrowserRouter>
     <RespNavbar/>
-    <Switch>
-      <Route exact path='/' component={Homepage}/>
+      <Switch>
+        <Route exact path='/' component={Homepage}/>
 
-      <Route exact path='/sherbroue' component={about}/>
-      <Route exact path='/projet' component={project}/>
-      <Route exact path='/événement' component={Évenement}/>
-      <Route exact path='/partenaire' component={partners}/>
-      <Route exact path='/connexion' component={signIn}/>
-      <Route exact path='/contact' component={contact}/>
-    </Switch>
+        <Route exact path='/sherbroue' component={about}/>
+        <Route exact path='/projet' component={project}/>
+        <Route exact path='/événement' component={Évenement}/>
+        <Route exact path='/partenaire' component={partners}/>
+        <Route exact path='/connexion' component={signIn}/>
+        <Route exact path='/contact' component={contact}/>
+      </Switch>
     
    
    </BrowserRouter>

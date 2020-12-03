@@ -1,9 +1,11 @@
 import React from 'react';
 
+
+
 function about (){
     return(
-        <div>
-        About
+        <div >
+            About
         </div>
     )
 }

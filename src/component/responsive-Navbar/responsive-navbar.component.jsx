@@ -1,6 +1,6 @@
 //https://www.youtube.com/watch?v=T2MhVxJxsL0
 import LogoS from '../../assets/Sherbrouell.svg'
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import './responsive-navbar.styles.css';
 import  {Button} from './Button';
 
@@ -13,25 +13,28 @@ function RespNavbar(){
 
     const handleClick = ()=> setClick(!click);
     const closeMobileMenu = ()=> setClick(false);
+    const [scrolled,setScrolled]=React.useState(false);
+    const handleScroll=() => {
+    const offset=window.scrollY;
+    if(offset > 200 ){
+      setScrolled(true);
+    }
+    else{
+      setScrolled(false);
+    }
+    }
 
-    const onMouseEnter = () => {
-        if(window.innerWidth < 960){
-            setDropdown(false)
-        }else{
-            setDropdown(true)
-        }
-    };
-    const onMouseLeave = () => {
-        if(window.innerWidth < 960){
-            setDropdown(false)
-        }else{
-            setDropdown(false)
-        }
-    };
+    useEffect(() => {
+    window.addEventListener('scroll',handleScroll)
+  })
+    
+    
+    
 
 
     return(
-       
+    <div className='superdiv'>
+        <header className={setScrolled? 'navbar scrolled' : 'navbar'}>
             <nav className='navbar'>
                     <Link to='/' className='navbar-logo'>
                     
@@ -82,7 +85,8 @@ function RespNavbar(){
                 </ul>
                 
             </nav>
-        
+        </header>
+    </div>
     )
 }
 
