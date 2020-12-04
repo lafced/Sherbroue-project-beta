@@ -1,0 +1,42 @@
+
+.parent {
+    display: flex;
+    font-family: arial, sans-serif;
+  }
+  
+  .item {
+    width: 50%;
+    padding: 2em;
+    color: #ffffff;
+    background: #eeeeee;
+    min-height: 500px;
+  }
+  
+  .last {
+    color: #222;
+    background: #ccc;
+    width:50%;
+  }
+  .photo{
+    object-fit: cover;
+    width:50%;
+  }
+  
+  @media screen and (max-width: 600px){
+    
+    .parent {
+      flex-direction: column-reverse;  
+    }
+    
+    .item {
+      width: auto;
+      min-height: 200px;
+    }
+    
+    .last {
+      background: #aa0000;
+    }
+    .photo{
+        height:400px;
+        width:100%;
+  }}
