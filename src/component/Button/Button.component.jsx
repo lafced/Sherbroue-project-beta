@@ -3,9 +3,10 @@ import './Button.styles.scss';
 import {Link} from 'react-router-dom';
 
 const CustomButton = () => (
-    <Link to='/sherbroue'>
-        <button className='button' >
-            Découvrir Sherbroue
+    <Link to='/sherbroue' className='buttons'>
+
+        <button class="corner-button">
+            <span>Découvrir Sherbroue</span>
         </button>
     </Link>
 )
