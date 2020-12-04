@@ -2,24 +2,33 @@
 .parent {
     display: flex;
     font-family: arial, sans-serif;
+    
   }
   
   .item {
     width: 50%;
-    padding: 2em;
+    padding: 7em;
     color: #ffffff;
     background: #eeeeee;
     min-height: 500px;
+    
   }
   
   .last {
     color: #222;
     background: #ccc;
     width:50%;
+    justify-content:center;
   }
   .photo{
     object-fit: cover;
     width:50%;
+  }
+  #titre {
+      font-size:12px;
+  }
+  #slogan {
+      font-size:30px;
   }
   
   @media screen and (max-width: 600px){
@@ -34,7 +43,7 @@
     }
     
     .last {
-      background: #aa0000;
+      background: #ccc;
     }
     .photo{
         height:400px;
