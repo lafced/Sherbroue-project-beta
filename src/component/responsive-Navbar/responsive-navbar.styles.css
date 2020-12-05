@@ -21,7 +21,7 @@
     background-color: #eee;
     transition: all .7s ease-in;
     padding:0;
-    z-index: 1;
+    z-index: 3;
 
   }
 .scrolled{

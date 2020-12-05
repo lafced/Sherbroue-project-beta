@@ -1,7 +1,7 @@
 
 
 $bg: #ccc;
-$fg: blue;
+$fg: black;
 $border-width: .5rem;
 $corner-size: 3rem;
 $dur: .3s;
@@ -35,13 +35,13 @@ body {
   //it's to get the text to appear on top of the psewudo elements. is there a dom-less way to do it?
   span {
     position: relative;
-    z-index: 2;
+    z-index:2;
   }
   &::before, &::after {
     content: '';
     position: absolute;
     background: $bg;
-    z-index: 1;
+   
     transition: all $dur;
   }
   //the 101% is because of a pixel rounding issue in firefox
