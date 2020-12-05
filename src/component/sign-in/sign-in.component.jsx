@@ -1,0 +1,56 @@
+import React from 'react';
+import FormInput from '../form-input/form-input.component';
+import './sign-in.styles.scss';
+import CustomButton from '../button-sign/button-sign.component';
+
+
+class SignIn extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            email:'',
+            password:''
+        }
+    }
+
+
+
+    
+    handleChange = event =>{
+        const {value,name} = event.target;
+        this.setState({[name]:value})
+    }
+    render() {
+        return(
+            <div className='sign-in'>
+                <h2 className='title'>Je suis membre Sherbroue</h2>
+                <span>Connectez-vous à l'aide de votre adresse Usherbrooke</span>
+                <form onSubmit={this.handleSubmit}>
+                    <FormInput 
+                    name='email' 
+                    type='email' 
+                    handleChange={this.handleChange}
+                    value={this.state.email}
+                    label="Adresse Usherbrooke"
+                    required/>
+                   
+                    <FormInput
+                    name='password'
+                    type='password' 
+                    handleChange={this.handleChange} 
+                    value={this.state.password} 
+                    label="Mot de passe"
+                    required/>
+                    <div className='buttons'>
+                        <CustomButton type='submit' >CONNEXION</CustomButton>
+                        
+                    </div>
+                </form>
+            
+            
+            </div>
+        )
+    }
+}
+
+export default SignIn;

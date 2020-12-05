@@ -72,8 +72,8 @@ function RespNavbar(){
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to='/inscription' className='nav-links' onClick={closeMobileMenu}>
-                        Devenir membre
+                        <Link to='/achat' className='nav-links' onClick={closeMobileMenu}>
+                        Encouragez-nous
                         </Link>
                     </li>
                     <li className='nav-item'>
@@ -81,7 +81,13 @@ function RespNavbar(){
                         Contact
                         </Link>
                     </li>
-                    <Button/>
+                    <li className='nav-item'>
+                        <Link to='/connexion' className='nav-links' onClick={closeMobileMenu}>
+                            <Button/>
+                        </Link>
+                        
+                    </li>
+                    
                 </ul>
                 
             </nav>
