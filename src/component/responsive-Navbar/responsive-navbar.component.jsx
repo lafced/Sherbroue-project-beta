@@ -36,7 +36,7 @@ function RespNavbar({currentUser}){
     <div className='superdiv'>
         <header className={setScrolled? 'navbar scrolled' : 'navbar'}>
             <nav className='navbar'>
-                    <Link to='/' className='navbar-logo'>
+                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
                     
                         <img src={LogoS} id='logoSherb' />
                                     
@@ -81,20 +81,25 @@ function RespNavbar({currentUser}){
                         Contact
                         </Link>
                     </li>
+                    <li className ='nav-item'>
                     {
                         currentUser ?
-                        <li className='nav-item'>
-                            <Button className='nav-links' onClick={() => auth.signOut()}/>
-                        </li>
-                        :
-                        <li className='nav-item'>
-                            <Link to='/connexion' className='nav-links' onClick={closeMobileMenu}>
-                                <Button/>
-                            </Link>
+                        <div className='nav-links' onClick={() => auth.signOut()}>
+                           Sign Out
+                        </div>
+                       
                         
-                        </li>
+                        :
+        
+                        <Link to='/connection' className='nav-links' onClick={closeMobileMenu}>
+                            <Button label='connection'  />
+                        </Link>
+                        
+                            
+                        
+                        
                     }
-                    
+                    </li>
                 </ul>
                 
             </nav>

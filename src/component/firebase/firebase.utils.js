@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-const config = {
+const firebaseConfig = {
     apiKey: "AIzaSyDu18spMo8snmGoaTVdCJylN4C91UsjQaU",
     authDomain: "sherbroue-website.firebaseapp.com",
     projectId: "sherbroue-website",
@@ -39,7 +39,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) =>{
 
 
 
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
+
 
 
 

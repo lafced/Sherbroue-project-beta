@@ -1,11 +1,12 @@
 import React from 'react';
 import './Button.style.css';
-import {Link} from 'react-router-dom';
 
-export function Button(){
+
+export const Button = ({label}) => {
     return(
-        <Link to='connexion'>
-            <button className='btn'>Connexion</button>
-        </Link>
+       
+        <button className='btn'>{label}</button>
+        
     )
 }
+

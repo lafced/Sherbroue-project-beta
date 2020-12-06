@@ -53,7 +53,7 @@ class App extends React.Component {
   render(){
   return (
    <BrowserRouter>
-    <RespNavbar currentUser={this.state.currentUser}/>
+      <RespNavbar currentUser={this.state.currentUser}/>
       <Switch>
         <Route exact path='/' component={Homepage}/>
 
@@ -63,7 +63,7 @@ class App extends React.Component {
         <Route exact path='/partenaire' component={partners}/>
         <Route exact path='/achat' component={store}/>
         <Route exact path='/contact' component={contact}/>
-        <Route exact path='/connexion' component={SignInPage}/>
+        <Route exact path='/connection' component={SignInPage}/>
       </Switch>
     
    
@@ -71,6 +71,6 @@ class App extends React.Component {
       
     
   );
-}
+};
 }
 export default App;
