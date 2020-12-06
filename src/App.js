@@ -10,12 +10,50 @@ import partners from './pages/partners';
 import SignInPage from './pages/signIn';
 import contact from './pages/Homepage';
 import store from './pages/Store';
+import { auth, createUserProfileDocument } from './component/firebase/firebase.utils';
 
 
-function App() {
+
+
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      currentUser:null
+    };
+  }
+
+
+  unsubscribeFromAuth = null
+
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot(snapShot => {
+          this.setState({
+            currentUser: {
+              id:snapShot.id,
+              ...snapShot.data()
+            }
+          })
+        });
+      }
+      this.setState({currentUser: userAuth});
+    });
+  }
+
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+
+  render(){
   return (
    <BrowserRouter>
-    <RespNavbar/>
+    <RespNavbar currentUser={this.state.currentUser}/>
       <Switch>
         <Route exact path='/' component={Homepage}/>
 
@@ -34,5 +72,5 @@ function App() {
     
   );
 }
-
+}
 export default App;

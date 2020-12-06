@@ -3,10 +3,10 @@ import LogoS from '../../assets/Sherbrouell.svg'
 import React, {useState,useEffect} from 'react';
 import './responsive-navbar.styles.css';
 import  {Button} from './Button';
-
+import { auth } from '../firebase/firebase.utils';
 import { Link } from 'react-router-dom';
 
-function RespNavbar(){
+function RespNavbar({currentUser}){
 
     const [click,setClick] =useState(false);
     const [dropdown,setDropdown] =useState(false);
@@ -81,12 +81,19 @@ function RespNavbar(){
                         Contact
                         </Link>
                     </li>
-                    <li className='nav-item'>
-                        <Link to='/connexion' className='nav-links' onClick={closeMobileMenu}>
-                            <Button/>
-                        </Link>
+                    {
+                        currentUser ?
+                        <li className='nav-item'>
+                            <Button className='nav-links' onClick={() => auth.signOut()}/>
+                        </li>
+                        :
+                        <li className='nav-item'>
+                            <Link to='/connexion' className='nav-links' onClick={closeMobileMenu}>
+                                <Button/>
+                            </Link>
                         
-                    </li>
+                        </li>
+                    }
                     
                 </ul>
                 
